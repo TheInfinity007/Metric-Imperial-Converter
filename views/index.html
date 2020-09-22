@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Welcome to HyperDev!</title>
-    <meta name="description" content="A cool thing made with HyperDev">
-    <link id="favicon" rel="icon" href="https://hyperdev.com/favicon-app.ico" type="image/x-icon">
+    <title>Metric Converter</title>
+    <meta name="description" content="">
+    <link id="favicon" rel="icon" href="" type="image/x-icon">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,7 +12,7 @@
   <body>
     <header>
       <h1>
-        ISQA_2 - Metric/Imp Converter
+          Metric/Imp Converter
       </h1>
     </header>
     <div id='userstories' style='margin-left: 5%; margin-top: 5%'>
@@ -39,7 +39,7 @@
       <code>/api/convert?input=5.4/3lbs</code><br>
       <code>/api/convert?input=kg</code><br>
       <h3>Example return:</h3>
-      <code>{initNum: 3.1, initUnit: 'mi', returnNum: 5.0000008, returnUnit: 'km', string: '3.1 miles converts to 5.00002 kilometers'}</code>
+      <code>{initNum: 3.1, initUnit: 'mi', returnNum: 4.98895, returnUnit: 'km', string: '3.1 miles converts to 4.98895  kilometers'}</code>
     </div>
     <hr style='margin: 50px'>
     <div id='testui' style='margin-left: 5%'>
@@ -65,6 +65,7 @@
             type: 'get',
             data: $('#convertForm').serialize(),
             success: function(data) {
+              console.log(data);
               $('#result').text(data.string || data);
               $('#jsonResult').text(JSON.stringify(data));
             }
