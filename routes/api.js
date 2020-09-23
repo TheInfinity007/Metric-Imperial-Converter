@@ -21,6 +21,7 @@ module.exports = function (app) {
       var initNum = convertHandler.getNum(input);
       var initUnit = convertHandler.getUnit(input);
 
+      initUnit = initUnit.toLowerCase();
       if(initUnit == 'kg' || initUnit == 'lbs' || initUnit == 'l' || initUnit == 'gal' || initUnit == 'km' || initUnit == 'mi'){
         var returnNum = convertHandler.convert(initNum, initUnit);
         var returnUnit = convertHandler.getReturnUnit(initUnit);
@@ -33,10 +34,11 @@ module.exports = function (app) {
           'returnUnit': returnUnit,
           'string': toString 
         };
-        res.json(data);
+
+        res.status(200).json(data);
       }else{
         let data = {  "error": "invalid unit", "string":  'Error - ' + initUnit };
-        res.send(data);
+        res.status(200).send(data);
       }      
     });
 };

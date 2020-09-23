@@ -14,8 +14,8 @@ function ConvertHandler() {
     let index = input.search(/[a-z]/g);
     let num = input.substring(0, index);
     result = eval(num);
-
     if(!result) result = 1;
+    result = result.toFixed(5);
     return result;
   };
   
@@ -34,7 +34,7 @@ function ConvertHandler() {
     }else if(initUnit == 'lbs'){
       result = 'kg';
     }else if(initUnit == 'gal'){
-      result = 'l';
+      result = 'L';
     }else if(initUnit == 'l'){
       result = 'gal';
     }else if(initUnit == 'mi'){
@@ -84,13 +84,14 @@ function ConvertHandler() {
       result = initNum/lbsToKg;
     }else if(initUnit == 'gal'){
       result = initNum*galToL;
-    }else if(initUnit == 'kg'){
+    }else if(initUnit == 'l'){
       result = initNum/galToL;
     }
     
     if(result){
         result = result.toFixed(5);
     }
+    console.log(initNum, initUnit, result);
     return result;
   };
   
