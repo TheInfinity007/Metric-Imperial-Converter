@@ -39,7 +39,7 @@ module.exports = function (app) {
         res.status(200).json(data);
       }else{
         let data = {  "error": "invalid unit" };
-        res.status(200).send(data);
+        res.status(200).send("invalid unit");
       }      
     });
 };
