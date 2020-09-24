@@ -27,6 +27,7 @@ module.exports = function (app) {
         var returnUnit = convertHandler.getReturnUnit(initUnit);
         var toString = convertHandler.getString(initNum, initUnit, returnNum, returnUnit);
         
+        if(returnUnit == 'l') returnUnit = 'L';
         let data = {
           'initNum': initNum,
           'initUnit': initUnit,
